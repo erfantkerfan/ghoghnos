@@ -4,7 +4,7 @@
     <div class="flex-center position-ref full-height">
         <div class="content">
             <div class="title m-b-md">
-                {{ env('app_name') }}
+                {{ config('app.name') }}
         </div>
     </div>
 @endsection
