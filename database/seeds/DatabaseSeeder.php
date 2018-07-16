@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PointTableSeeder::class);
         DB::table('masterkeys')->truncate();
         $this->call(MasterkeyTableSeeder::class);
+        DB::table('users')->truncate();
+        $this->call(UserTableSeeder::class);
 
     }
 }
