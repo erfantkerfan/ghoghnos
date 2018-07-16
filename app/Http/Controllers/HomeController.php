@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Player;
+use App\User;
+use App\Score;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $players = Player::with('Score')->get();
+        return view('home')->with(['players'=>$players]);
     }
 }
