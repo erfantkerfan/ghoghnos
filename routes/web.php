@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/allow/login/{id}', 'HomeController@allow')->name('allow');
+Route::get('/map', 'HomeController@map')->name('map');
+Route::get('/AppDayOne', 'HomeController@AppDayOne')->name('AppDayOne');
+Route::get('/AppDayTwo', 'HomeController@AppDayTwo')->name('AppDayTwo');

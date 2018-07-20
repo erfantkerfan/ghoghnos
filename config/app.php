@@ -14,7 +14,19 @@ return [
     */
 
     'name' => 'ققنوس',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Font & Time
+    |--------------------------------------------------------------------------
+    */
+
     'font' => 'BTITRBOLD.ttf',
+    'day1s' => '1397-05-03 16:00:00',
+    'day1e' => '1397-05-03 18:30:00',
+    'day2s' => '1397-05-04 16:00:00',
+    'day2e' => '1397-05-04 18:30:00',
+    'timer' => false,// ToDO set it to false
 
     /*
     |--------------------------------------------------------------------------
@@ -66,7 +78,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tehran',
 
     /*
     |--------------------------------------------------------------------------
@@ -160,6 +172,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Hekmatinasser\Verta\VertaServiceProvider::class,
 
     ],
 
@@ -209,6 +222,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Verta' => Hekmatinasser\Verta\Verta::class,
 
     ],
 

@@ -16,7 +16,7 @@ class CreatePlayersTable extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->increments('id');
             $table->text('pass')->nullable();
-            $table->boolean('login')->default('0');
+            $table->boolean('login')->default('1');
             $table->tinyInteger('start')->nullable();
             $table->tinyInteger('state')->nullable();
             $table->text('location')->nullable();

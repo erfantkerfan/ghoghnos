@@ -4,7 +4,8 @@
     <div class="flex-center position-ref full-height">
         <div class="content">
             <div class="title m-b-md">
-                {{ config('app.name') }}
+                <img src="/img/img.gif" style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)">
+            </div>
         </div>
     </div>
 @endsection
