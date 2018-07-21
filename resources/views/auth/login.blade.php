@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header text-center">ورود</div>
 
-                <div class="card-body">
+                <div class="card-body text-center">
                     <form method="POST" action="{{ route('login') }}" aria-label="ورود">
                         @csrf
 
