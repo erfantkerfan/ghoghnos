@@ -59,6 +59,7 @@ class HomeController extends Controller
         }
         $players = Player::where('location','!=',null)->get(['id','location']);
         $i = 0;
+        public $locations = array();
         foreach ($players as $player) {
             $locations[$i][0] = str_before($player->id,' ');
             $locations[$i][1] = str_before($player->location,',');
