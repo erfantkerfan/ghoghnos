@@ -4,7 +4,7 @@
     <div class="container">
         <div id="map" class="text-center" style="width: 1100px; height: 550px;"></div>
     </div>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBwG0YbGVoIxSLrH6FC9FlrNAEoKrVpg_U" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js" type="text/javascript"></script>
     <script type="text/javascript">
         var locations = {!! json_encode($locations) !!};
 
