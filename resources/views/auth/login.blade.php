@@ -3,11 +3,11 @@
 @section('content')
 <div class="container text-center" style="font-family:'Font'">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-7 justify-content-center">
+            <div class="card justify-content-center">
                 <div class="card-header text-center">ورود</div>
 
-                <div class="card-body text-center">
+                <div class="card-body justify-content-center text-center">
                     <form method="POST" action="{{ route('login') }}" aria-label="ورود">
                         @csrf
 
@@ -39,8 +39,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="form-group row  justify-content-center">
+                            <div class="col-md-4">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> مرا در حالت ورود نگه دار
@@ -49,8 +49,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                        <div class="form-group row mb-0 justify-content-center">
+                            <div class="col-md-2">
                                 <button type="submit" class="btn btn-primary">
                                     ورود
                                 </button>
