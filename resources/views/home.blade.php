@@ -40,11 +40,16 @@
                                 <td>{{$player->pass}}</td>
                                 <td>
                                     @if ($player->login==0)
-                                        <span class="glyphicon glyphicon-remove" style="color:red"></span>
+                                        <a href="#">
+                                            <button class="btn">
+                                                <span class="glyphicon glyphicon-ok" style="color:green"></span>
+                                            </button>
+                                        </a>
                                     @elseif ($player->login==1)
                                         <a href="{{route('allow',['id'=>$player->id])}}">
                                             <button class="btn">
-                                                <span class="glyphicon glyphicon-ok" style="color:green"></span>
+
+                                                <span class="glyphicon glyphicon-lock" style="color:red"></span>
                                             </button>
                                         </a>
                                     @endif
