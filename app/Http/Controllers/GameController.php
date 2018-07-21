@@ -45,7 +45,7 @@ class GameController extends Controller
                 $player->lvlpass = $player->lvlpass();
                 $player->score = Score::find($player->id)->final();
             }
-            $players->sortby('score');
+            $players->sortByDesc('score');
             return response()->json($players);
 
         }elseif((Verta::parse(config('app.day1s'))->isPast() && Verta::parse(config('app.day1e'))->isFuture())){
@@ -55,7 +55,7 @@ class GameController extends Controller
                 $player->lvlpass = $player->lvlpass();
                 $player->score = Score::find($player->id)->final();
             }
-            $players->sortby('score');
+            $players->sortByDesc('score');
             return response()->json($players);
         }
         abort(270);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Player;
+use App\Score;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,12 @@ class HomeController extends Controller
     public function index()
     {
         $players = Player::with('Score')->get();
+        foreach ($players as $player){
+            $player->ss = Score::find($player->id)->final();
+        }
+        $players = $players->sortByDesc('ss');
+//        return response()->json([$players]);
+
         return view('home')->with(['players'=>$players]);
     }
 
