@@ -60,12 +60,12 @@ class HomeController extends Controller
         $players = Player::where('location','!=',null)->get(['id','location']);
         $i = 0;
         foreach ($players as $player) {
-            $var[$i][0] = str_before($player->id,' ');
-            $var[$i][1] = str_before($player->location,',');
-            $var[$i][2] = str_after($player->location,',');
+            $locations[$i][0] = str_before($player->id,' ');
+            $locations[$i][1] = str_before($player->location,',');
+            $locations[$i][2] = str_after($player->location,',');
             $i +=1;
         }
-        return view('test')->with(['locations'=>$var]);
-//        return view('map')->with(['locations'=>$var]);
+//        return view('test')->with(['locations'=>$var]);
+        return view('map')->with(['locations'=>$locations]);
     }
 }
