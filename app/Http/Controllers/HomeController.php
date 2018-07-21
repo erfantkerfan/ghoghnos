@@ -65,7 +65,6 @@ class HomeController extends Controller
             $locations[$i][2] = str_after($player->location,',');
             $i +=1;
         }
-//        return view('test')->with(['locations'=>$var]);
         return view('map')->with(['locations'=>$locations]);
     }
 }

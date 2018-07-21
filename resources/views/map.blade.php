@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container">
-        <div id="map" class="text-center" style="width: 1100px; height: 600px;"></div>
+        <div id="map" class="text-center" style="width: 1100px; height: 550px;"></div>
     </div>
-    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js" type="text/javascript"></script>
     <script type="text/javascript">
-        var locations = <?php echo json_encode($locations);?>;
+        var locations = {!! json_encode($locations) !!};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 17.5,
+            zoom: 17.3,
             center: new google.maps.LatLng(36.950662, 50.613075),
             mapTypeId: google.maps.MapTypeId.HYBRID
         });

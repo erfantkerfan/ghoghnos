@@ -142,10 +142,10 @@
                 </div>
             </div>
         </nav>
+    </div>
 
         <br>
 
         @yield('content')
-    </div>
 </body>
 </html>
