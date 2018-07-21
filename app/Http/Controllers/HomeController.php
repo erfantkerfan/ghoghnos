@@ -62,8 +62,9 @@ class HomeController extends Controller
             if ((Verta::parse(config('app.day2s'))->isPast() && Verta::parse(config('app.day2e'))->isFuture())) {
                 $players = Player::where('id','>','24')->where('location','!=',null)->get(['id','location']);
             }
+        }else{
+            $players = Player::where('location','!=',null)->get(['id','location']);
         }
-        $players = Player::where('location','!=',null)->get(['id','location']);
         $i = 0;
         $locations = array();
         foreach ($players as $player) {
