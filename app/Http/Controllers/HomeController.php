@@ -4,73 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use App\Score;
+use App\User;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
+    public function landing()
+    {
+        return view('welcome');
+    }
     public function index()
     {
-        $players = Player::with('Score')->get();
-        foreach ($players as $player){
-            $player->ss = Score::find($player->id)->final();
+        $users = User::where('id','!=','49')->with('Score')->get();
+        foreach ($users as $user){
+            $user->ss = Score::Find($user->id)->final();
         }
-        $players = $players->sortByDesc('ss');
-//        return response()->json([$players]);
-
-        return view('home')->with(['players'=>$players]);
-    }
-
-
-    public function AppDayOne()//    ToDo Fix This Shit
-    {
-        $pathToFile = public_path('app/1.jpg');
-        return response()->download($pathToFile);
-    }
-    public function AppDayTwo()//    ToDo Fix This Shit
-    {
-        $pathToFile = public_path('app/2.jpg');
-        return response()->download($pathToFile);
-    }
-
-    public function allow($id)
-    {
-        $player = Player::FindOrFail($id);
-        $player->login = 0 ;
-        $player->save();
-        return back();
+        $users = $users->sortByDesc('ss');
+        return view('home')->with(['players'=>$users]);
     }
     public function map()
     {
-        if(config('app.timer')) {
-            if ((Verta::parse(config('app.day1s'))->isPast() && Verta::parse(config('app.day1e'))->isFuture())) {
-                $players = Player::where('id','<','25')->where('location','!=',null)->get(['id','location']);
-            }
-            if ((Verta::parse(config('app.day2s'))->isPast() && Verta::parse(config('app.day2e'))->isFuture())) {
-                $players = Player::where('id','>','24')->where('location','!=',null)->get(['id','location']);
-            }
-        }else{
-            $players = Player::where('location','!=',null)->get(['id','location']);
-        }
+        $users = User::where('location','!=',null)->get(['id','location']);
         $i = 0;
         $locations = array();
-        foreach ($players as $player) {
-            $locations[$i][0] = str_before($player->id,' ');
-            $locations[$i][1] = str_before($player->location,',');
-            $locations[$i][2] = str_after($player->location,',');
+        foreach ($users as $user) {
+            $locations[$i][0] = str_before($user->id,' ');
+            $locations[$i][1] = str_before($user->location,',');
+            $locations[$i][2] = str_after($user->location,',');
             $i +=1;
         }
         return view('map')->with(['locations'=>$locations]);

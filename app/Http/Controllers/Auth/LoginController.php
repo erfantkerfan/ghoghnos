@@ -29,7 +29,14 @@ class LoginController extends Controller
     {
         return 'username';
     }
-    protected $redirectTo = '/home';
+    public function redirectTo()
+    {
+        if (auth()->user()->admin==1) {
+            return '/admin';
+        } else {
+            return '/start';
+        }
+    }
 
     /**
      * Create a new controller instance.

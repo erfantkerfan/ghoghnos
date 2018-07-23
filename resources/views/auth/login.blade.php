@@ -4,12 +4,19 @@
 <div class="container text-center" style="font-family:'Font'">
     <div class="row justify-content-center">
         <div class="col-md-7 justify-content-center">
-            <div class="card justify-content-center">
+            <div\ class="card justify-content-center">
                 <div class="card-header text-center">ورود</div>
 
                 <div class="card-body justify-content-center text-center">
                     <form method="POST" action="{{ route('login') }}" aria-label="ورود">
                         @csrf
+
+                        <div dir="rtl" style="color: darkolivegreen">
+                            نام کاربری شماره گروه (مثلا 1) میباشد و رمز ورود یک عدد 6 رقمی است که دو رقم سمت راست شماره گروه (مثلا 01) و چها رقم سمت چپ قبلا به شما تحویل داد شده است.
+                            <br>
+                            <br>
+                            فکر کنید!!!
+                        </div>
 
                         <div class="form-group row">
                             <label for="username" class="col-sm-4 col-form-label text-md-right">نام کاربری</label>

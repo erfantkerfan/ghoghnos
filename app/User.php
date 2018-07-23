@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username','login','start','state','location','admin'
     ];
 
     /**
@@ -24,6 +24,21 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','id'
     ];
+    public function score()
+    {
+        return $this->hasOne(Score::class);
+    }
+
+    public function pass()
+    {
+        $pass = 0;
+        $array = ['lvl_1','lvl_2','lvl_3','lvl_4','lvl_5','lvl_6','lvl_7','lvl_8','lvl_9','lvl_10'];
+        foreach ($array as $var)
+            if($this->$var!=0){
+                $pass += 1;
+            }
+        return $pass;
+    }
 }

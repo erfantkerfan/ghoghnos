@@ -17,6 +17,11 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('password');
+            $table->boolean('login')->default('1');
+            $table->tinyInteger('start')->nullable();
+            $table->tinyInteger('state')->nullable();
+            $table->text('location')->nullable();
+            $table->boolean('admin')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });

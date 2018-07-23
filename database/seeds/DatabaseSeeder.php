@@ -11,8 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('players')->truncate();
-        $this->call(PlayerTableSeeder::class);
+        DB::table('users')->truncate();
+        $this->call(UserTableSeeder::class);
         DB::table('games')->truncate();
         $this->call(GameTableSeeder::class);
         DB::table('locations')->truncate();
@@ -23,8 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PointTableSeeder::class);
         DB::table('masterkeys')->truncate();
         $this->call(MasterkeyTableSeeder::class);
-        DB::table('users')->truncate();
-        $this->call(UserTableSeeder::class);
+
 
     }
 }

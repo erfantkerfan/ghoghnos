@@ -9,7 +9,7 @@ class ScoreTableSeeder extends Seeder
     {
         for ($i=1;$i<=48;$i++) {
             \App\Score::create([
-                'player_id' => $i,
+                'user_id' => $i,
             ]);
         }
     }

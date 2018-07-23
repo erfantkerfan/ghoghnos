@@ -16,8 +16,6 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>رمز ورود</th>
-                            <th>وضعیت ورود</th>
                             <th>مرحله شروع</th>
                             <th>مرحله فعال</th>
                             <th>مجموع امتیاز</th>
@@ -37,21 +35,6 @@
                         @foreach($players as $player)
                             <tr>
                                 <td>{{$player->id}}</td>
-                                <td>{{$player->pass}}</td>
-                                <td>
-                                    @if ($player->login==0)
-                                        <button class="btn">
-                                            <span class="glyphicon glyphicon-ok" style="color:green"></span>
-                                        </button>
-                                    @elseif ($player->login==1)
-                                        <a href="{{route('allow',['id'=>$player->id])}}">
-                                            <button class="btn">
-
-                                                <span class="glyphicon glyphicon-lock" style="color:red"></span>
-                                            </button>
-                                        </a>
-                                    @endif
-                                </td>
                                 <td>{{$player->start}}</td>
                                 <td>{{$player->state}}</td>
                                 <td>{{$player->score->final()}}</td>

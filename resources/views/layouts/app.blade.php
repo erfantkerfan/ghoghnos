@@ -76,7 +76,7 @@
 
 </head>
 <body>
-    <div id="app" style="font-family:'Font'" >
+    <div id="app" dir="rtl" style="font-family:'Font'" >
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -95,18 +95,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('AppDayTwo') }}" style="color: green">
-                                دانلود بازی روز دوم
-                                {{--<span class="glyphicon glyphicon-bold" aria-hidden="true"></span>--}}
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('AppDayOne') }}" style="color: green">
-                                دانلود بازی روز اول
-                                {{--<span class="glyphicon glyphicon-font" aria-hidden="true"></span>--}}
-                            </a>
-                        </li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -120,13 +108,23 @@
                                     {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
+
                                 <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+                                    @if (Auth::user()->admin==1)
                                     <a class="dropdown-item" href="{{route('home')}}">
                                         پنل بازیکنان
                                     </a>
                                     <a class="dropdown-item" href="{{route('map')}}">
                                         موقعیت بازیکنان
                                     </a>
+                                    @else
+                                        <a class="dropdown-item" href="{{route('start')}}">
+                                            بزن بریم بازی
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('stat')}}">
+                                            اوضامون چجوریه
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}" style="color: red"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

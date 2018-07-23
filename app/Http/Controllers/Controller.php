@@ -11,5 +11,4 @@ use Hekmatinasser\Verta\Facades\Verta;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-//    ToDo app is set for 24/24 players
 }
