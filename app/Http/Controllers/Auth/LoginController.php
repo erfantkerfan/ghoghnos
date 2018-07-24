@@ -32,7 +32,7 @@ class LoginController extends Controller
     public function redirectTo()
     {
         if (auth()->user()->admin==1) {
-            return '/admin';
+            return '/home';
         } else {
             return '/start';
         }

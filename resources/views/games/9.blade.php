@@ -17,7 +17,8 @@
                     <br>
                 </div>
                 <br>
-                <div id="map" class="text-center" style="width: 340px; height: 240px;"></div>
+                <div id="map_container"></div>
+                <div id="map" class="text-center"></div>
                 <br>
                 <img class="col-12" src="/img/trk.jpg">
                 <br>

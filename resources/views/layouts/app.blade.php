@@ -72,11 +72,21 @@
         .title {
             font-size: 84px;
         }
+        #map_container{
+            position: relative;
+        }
+        #map{
+            height: 0;
+            overflow: hidden;
+            padding-bottom: 80%;
+            padding-top: 30px;
+            position: relative;
+        }
     </style>
 
 </head>
 <body>
-    <div id="app" dir="rtl" style="font-family:'Font'" >
+    <div id="app" style="font-family:'Font'" >
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

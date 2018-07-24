@@ -18,7 +18,8 @@
                     </div>
                 </div>
                 <br>
-                <div id="map" class="text-center" style="width: 340px; height: 240px;"></div>
+                <div id="map_container"></div>
+                <div id="map" class="text-center"></div>
 
                 <br>
                 <form method="POST" action="{{ route('p_3') }}">
