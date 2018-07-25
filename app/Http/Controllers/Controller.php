@@ -14,8 +14,11 @@ class Controller extends BaseController
 
     public function test()
     {
-        var_dump(Verta::parse(config('app.day1s'))->isPast());
-        var_dump(Verta::parse(config('app.day1e'))->isFuture());
-        var_dump(Verta::now());
+        if (Verta::parse(config('app.day1s'))->isPast() && Verta::parse(config('app.day1e'))->isFuture()) {
+            return 'OK1';
+        }elseif (Verta::parse(config('app.day2s'))->isPast() && Verta::parse(config('app.day2e'))->isFuture()) {
+            return 'OK2';
+        }
+        return 'NO';
     }
 }
