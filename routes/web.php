@@ -21,10 +21,14 @@ Route::middleware(['Admin'])->group(function () {
 });
 
 Route::middleware(['CheckTime','auth'])->group(function () {
+    Route::get('/stat', 'GameController@stat')->name('stat');
+});
+
+Route::middleware(['CheckTime','auth'])->group(function () {
     // Start Stats Locations Routes
     Route::post('/location', 'GameController@location')->name('location');
-    Route::get('/start', 'GameController@start')->name('start'); #
-    Route::get('/stat', 'GameController@stat')->name('stat'); #
+    Route::get('/start', 'GameController@start')->name('start');
+
     // Get Routes
     Route::get('/1', 'GetController@g_1')->name('g_1');
     Route::get('/2', 'GetController@g_2')->name('g_2');
