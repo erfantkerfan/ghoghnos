@@ -14,6 +14,14 @@ class GameController extends Controller
     public function start(Request $request)
     {
         $user = Auth::user();
+        $ended = Score::Find($user->id)->ended();
+        if($user->start==null){
+            if($ended){
+                return view('horey');
+            }else{
+                return view('ridihorey');
+            }
+        }
         if($user->state==null){
             $user->state = $user->start;
             $user->save();
@@ -32,10 +40,8 @@ class GameController extends Controller
     public function stat()
     {
         $users = User::where('id','!=','49')->get();
-//        $users = User::all();
-//
         foreach ($users as $user) {
-            $user->lvlpass = $user->pass();
+            $user->pass = $user->pass();
             $user->score = Score::find($user->id)->final();
         }
         $users = $users->sortByDesc('score');

@@ -25,7 +25,7 @@
                                 <tr>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->score}}</td>
-                                    <td>{{$user->lvlpass}}</td>
+                                    <td>{{$user->pass}}</td>
                                 </tr>
                             @endforeach
                             </tbody>

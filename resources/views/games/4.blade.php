@@ -82,7 +82,7 @@
                     @csrf
 
                     <div class="form-group row justify-content-center">
-                        <label for="username" class="col-sm-4 col-form-label text-md-right">جواب 4 رقمی</label>
+                        <label for="var" class="col-sm-4 col-form-label text-md-right">جواب 4 رقمی</label>
                         @if(Session::has('flash'))
                             <p class="alert alert-danger">{{ Session::get('flash') }}</p>
                         @endif

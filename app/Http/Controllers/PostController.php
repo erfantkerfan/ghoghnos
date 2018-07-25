@@ -39,6 +39,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -77,6 +79,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -104,7 +108,7 @@ class PostController extends Controller
         if($user->state!=3){
             return redirect(route('start'));
         }
-        if ($game->a_1 == $request->var || $masterkey == $request->var){
+        if ($game->a_3 == $request->var || $masterkey == $request->var){
             $user->state = 4;
             $user->save();
             if($game->a_3 == $request->var){
@@ -115,6 +119,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -153,6 +159,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -191,6 +199,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -229,6 +239,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -267,6 +279,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -291,10 +305,10 @@ class PostController extends Controller
         $game = Game::Find($id);
         $score = Score::Find($id);
         $ended = Score::Find($id)->ended();
-        if($user->state!=9){
+        if($user->state!=8){
             return redirect(route('start'));
         }
-        if ($game->a_9 == $request->var || $masterkey == $request->var){
+        if ($game->a_8 == $request->var || $masterkey == $request->var){
             $user->state = 9;
             $user->save();
             if($game->a_8 == $request->var){
@@ -305,6 +319,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -343,6 +359,8 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended){
                     return view('horey');
                 }else{
@@ -421,6 +439,8 @@ class PostController extends Controller
                 $user->save();
                 if($user->state==$user->start){
                     if($ended && $score->lvl_10 == $point){
+                        $user->start = null;
+                        $user->save();
                         return view('horey');
                     }else{
                         return view('ridihorey');
@@ -442,6 +462,8 @@ class PostController extends Controller
             $user->save();
             if($user->state==$user->start){
                 if($ended && $score->lvl_10 == $point){
+                    $user->start = null;
+                    $user->save();
                     return view('horey');
                 }else{
                     return view('ridihorey');

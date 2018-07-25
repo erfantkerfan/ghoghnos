@@ -15,8 +15,8 @@ Auth::routes();
 Route::get('/', 'HomeController@landing')->name('landing');
 Route::middleware(['Admin'])->group(function () {
     Route::get('/map', 'HomeController@map')->name('map');
-    Route::get('/home', 'HomeController@index')->name('home'); # ToDo shity view
-    // ToDo localaziong Database
+    Route::get('/home', 'HomeController@index')->name('home');
+    // ToDo localaziong Locations Database
 });
 
 Route::middleware(['CheckTime','auth'])->group(function () {

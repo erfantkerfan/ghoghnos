@@ -27,7 +27,7 @@
                     @csrf
 
                     <div class="form-group row justify-content-center">
-                        <label for="username" class="col-sm-4 col-form-label text-md-right">رمز کلیپ</label>
+                        <label for="var" class="col-sm-4 col-form-label text-md-right">رمز کلیپ</label>
                         @if(Session::has('flash'))
                             <p class="alert alert-danger">{{ Session::get('flash') }}</p>
                         @endif

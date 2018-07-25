@@ -34,11 +34,14 @@ class User extends Authenticatable
     public function pass()
     {
         $pass = 0;
+        $score = Score::Find($this->id);
         $array = ['lvl_1','lvl_2','lvl_3','lvl_4','lvl_5','lvl_6','lvl_7','lvl_8','lvl_9','lvl_10'];
-        foreach ($array as $var)
-            if($this->$var!=0){
+        foreach ($array as $var) {
+            if ($score->$var != 0) {
                 $pass += 1;
             }
+
+        }
         return $pass;
     }
 }
