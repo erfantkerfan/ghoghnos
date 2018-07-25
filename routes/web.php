@@ -12,7 +12,7 @@
 */
 
 Auth::routes();
-Route::get('/test','Controller@landing');
+Route::get('/test','Controller@test');
 Route::get('/', 'HomeController@landing')->name('landing');
 Route::middleware(['Admin'])->group(function () {
     Route::get('/map', 'HomeController@map')->name('map');
