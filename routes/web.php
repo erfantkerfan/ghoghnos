@@ -17,6 +17,7 @@ Route::middleware(['Admin'])->group(function () {
     Route::get('/map', 'HomeController@map')->name('map');
     Route::get('/home', 'HomeController@index')->name('home');
     // ToDo localaziong Locations Database
+    // ToDO get user location
 });
 
 Route::middleware(['CheckTime','auth'])->group(function () {

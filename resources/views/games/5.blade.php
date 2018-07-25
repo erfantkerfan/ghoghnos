@@ -51,7 +51,7 @@
 
                 <script src="http://maps.google.com/maps/api/js?key=AIzaSyAafG74xopXE0y0qtpjbjjKA7Qhe3MYG_M" type="text/javascript"></script>
                 <script type="text/javascript">
-                    var locations = [['مکان بازی',36.951359, 50.612718]];
+                    var locations = [['مکان بازی',36.949928, 50.612018]];
 
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 17,
