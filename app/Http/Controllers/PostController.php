@@ -461,9 +461,9 @@ class PostController extends Controller
             $user->state = 1;
             $user->save();
             if($user->state==$user->start){
+                $user->start = null;
+                $user->save();
                 if($ended && $score->lvl_10 == $point){
-                    $user->start = null;
-                    $user->save();
                     return view('horey');
                 }else{
                     return view('ridihorey');
