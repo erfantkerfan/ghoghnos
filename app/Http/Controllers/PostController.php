@@ -39,6 +39,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -48,7 +49,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_2'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -79,6 +80,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -88,7 +90,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_3'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -119,6 +121,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -128,7 +131,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_4'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -159,6 +162,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -168,7 +172,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_5'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -199,6 +203,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -208,7 +213,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_6'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -239,6 +244,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -248,7 +254,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_7'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -279,6 +285,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -288,7 +295,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_8'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -319,6 +326,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -328,7 +336,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_9'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -359,6 +367,7 @@ class PostController extends Controller
             $score->save();
 
             if($user->state==$user->start){
+                $user->state = null;
                 $user->start = null;
                 $user->save();
                 if($ended){
@@ -368,7 +377,7 @@ class PostController extends Controller
                 }
 
             }
-            return redirect(route('g_10'));
+            return redirect(route('start'));
         }else{
             Session::flash('flash','کد وارد شده غلط می باشد');
             return back();
@@ -439,6 +448,7 @@ class PostController extends Controller
                 $user->save();
                 if($user->state==$user->start){
                     if($ended && $score->lvl_10 == $point){
+                        $user->state = null;
                         $user->start = null;
                         $user->save();
                         return view('horey');
@@ -464,12 +474,13 @@ class PostController extends Controller
                 $user->start = null;
                 $user->save();
                 if($ended && $score->lvl_10 == $point){
+                    $user->state = null;
                     return view('horey');
                 }else{
                     return view('ridihorey');
                 }
             }
-            return redirect(route('g_1'));
+            return redirect(route('start'));
         }else{
             $game = Game::Find(Auth::user()->id);
             $q_10 = $game->q_10;
