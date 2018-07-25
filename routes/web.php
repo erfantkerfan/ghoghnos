@@ -20,7 +20,7 @@ Route::middleware(['Admin'])->group(function () {
     // ToDO get user location
 });
 
-Route::middleware(['CheckTime','auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/stat', 'GameController@stat')->name('stat');
 });
 
