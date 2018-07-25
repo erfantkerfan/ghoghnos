@@ -17,12 +17,12 @@ class CheckTime
     public function handle($request, Closure $next)
     {
         if(config('app.timer')) {
-            if (!(Verta::parse(config('app.day1s'))->isPast() && Verta::parse(config('app.day1e'))->isFuture())) {
-                abort(270,"It's not play time");
-            }elseif (!(Verta::parse(config('app.day2s'))->isPast() && Verta::parse(config('app.day2e'))->isFuture())) {
-                abort(270,"It's not play time");
+            if (Verta::parse(config('app.day1s'))->isPast() && Verta::parse(config('app.day1e'))->isFuture()) {
+                return $next($request);
+            }elseif (Verta::parse(config('app.day2s'))->isPast() && Verta::parse(config('app.day2e'))->isFuture()) {
+                return $next($request);
             }
         }
-        return $next($request);
+        abort(270,"It's not play time");
     }
 }
