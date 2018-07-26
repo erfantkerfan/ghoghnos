@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <head>
+        <meta http-equiv="refresh" content="5">
+    </head>
+
 <div class="container-fluid text-center" style="font-family:'Font'">
     <div class="row justify-content-center">
         <div class="col-12">
@@ -36,19 +41,91 @@
                             @foreach($players as $player)
                                 <tr>
                                     <td>{{$player->id}}</td>
-                                    <td>{{$player->start}}</td>
+                                    <td>
+                                        @if ($player->start==null && $player->state==null)
+                                            <button type="button" class="btn btn-info btn-sm">پایان بازی</button>
+                                        @else
+                                            {{$player->start}}
+                                        @endif
+                                    </td>
                                     <td>{{$player->state}}</td>
-                                    <td>{{$player->score->final()}}</td>
-                                    <td style="border-right: 2px solid black;">{{$player->score->lvl_1}}</td>
-                                    <td>{{$player->score->lvl_2}}</td>
-                                    <td>{{$player->score->lvl_3}}</td>
-                                    <td>{{$player->score->lvl_4}}</td>
-                                    <td>{{$player->score->lvl_5}}</td>
-                                    <td>{{$player->score->lvl_6}}</td>
-                                    <td>{{$player->score->lvl_7}}</td>
-                                    <td>{{$player->score->lvl_8}}</td>
-                                    <td>{{$player->score->lvl_9}}</td>
-                                    <td>{{$player->score->lvl_10}}</td>
+                                    <td>
+                                        @if ($player->score->final()==215)
+                                            <button type="button" class="btn btn-success btn-sm">امتیاز کامل</button>
+                                        @else
+                                            {{$player->score->final()}}
+                                        @endif
+                                    </td>
+                                    <td style="border-right: 2px solid black;">
+                                        @if ($player->score->lvl_1==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_1}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_2==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_2}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_3==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_3}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_4==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_4}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_5==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_5}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_6==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_6}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_7==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_7}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_8==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_8}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_9==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_9}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($player->score->lvl_10==-1)
+                                            <button type="button" class="btn btn-warning btn-sm">عبور</button>
+                                        @else
+                                            {{$player->score->lvl_10}}
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

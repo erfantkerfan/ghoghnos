@@ -48,7 +48,7 @@
                     @csrf
 
                     <div class="form-group row justify-content-center">
-                        <label for="var" class="col-sm-4 col-form-label text-md-right">محل ورود گد 3 رقمی پاسخ</label>
+                        <label for="var" class="col-sm-4 col-form-label text-md-right">محل ورود کد 3 رقمی پاسخ</label>
                         @if(Session::has('flash'))
                             <p class="alert alert-danger">{{ Session::get('flash') }}</p>
                         @endif
