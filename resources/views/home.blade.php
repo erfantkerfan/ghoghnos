@@ -40,7 +40,17 @@
                             <tbody>
                             @foreach($players as $player)
                                 <tr>
-                                    <td>{{$player->id}}</td>
+                                    <td>
+                                        @if ($player->id > 24 )
+                                            <span style="color:#0390d9">
+                                                {{$player->id}}
+                                            </span>
+                                        @else
+                                            <span style="color:#6a3cdd">
+                                                {{$player->id}}
+                                            </span>
+                                        @endif
+                                    </td>
                                     <td>
                                         @if ($player->start==null && $player->state==null)
                                             <button type="button" class="btn btn-info btn-sm">پایان بازی</button>
