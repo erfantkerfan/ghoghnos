@@ -20,7 +20,7 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $users = User::where('id','!=','49')->with('Score')->get();
+        $users = User::where('admin','=','0')->with('Score')->get();
         foreach ($users as $user){
             $user->ss = Score::Find($user->id)->final();
         }

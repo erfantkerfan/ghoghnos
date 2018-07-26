@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <head>
-        <meta http-equiv="refresh" content="5">
-    </head>
+    {{--<head>--}}
+        {{--<meta http-equiv="refresh" content="30">--}}
+    {{--</head>--}}
 
 <div class="container-fluid text-center" style="font-family:'Font'">
     <div class="row justify-content-center">
@@ -52,6 +52,8 @@
                                     <td>
                                         @if ($player->score->final()==215)
                                             <button type="button" class="btn btn-success btn-sm">امتیاز کامل</button>
+                                        @elseif ($player->score->final()==0)
+                                            <button type="button" class="btn btn-danger btn-sm">صفر</button>
                                         @else
                                             {{$player->score->final()}}
                                         @endif
