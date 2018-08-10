@@ -4,7 +4,7 @@
 <div class="container text-center" style="font-family:'Font'">
     <div class="row justify-content-center">
         <div class="col-md-7 justify-content-center">
-            <div\ class="card justify-content-center">
+            <div class="card justify-content-center">
                 <div class="card-header text-center">ورود</div>
 
                 <div class="card-body justify-content-center text-center">
