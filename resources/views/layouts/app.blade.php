@@ -83,6 +83,27 @@
             position: relative;
         }
     </style>
+    <script>
+        @if(Auth::check())
+        setInterval(function(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            function position(position){
+                $.ajax({
+                    type:"POST",
+                    cache:false,
+                    url:"/location",
+                    data: {'position':position , "_token": "{{ csrf_token() }}" },
+                    dataType: "text",
+            });
+            }
+
+        }, 3000);
+        @endif
+    </script>
 
 </head>
 <body>

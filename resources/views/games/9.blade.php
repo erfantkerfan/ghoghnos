@@ -23,9 +23,9 @@
                 <img class="col-12" src="/img/trk.jpg">
                 <br>
                 <br>
-                <script src="http://maps.google.com/maps/api/js?key=AIzaSyAafG74xopXE0y0qtpjbjjKA7Qhe3MYG_M" type="text/javascript"></script>
+                <script src="http://maps.google.com/maps/api/js?key={{$google_api_key}}" type="text/javascript"></script>
                 <script type="text/javascript">
-                    var locations = [['مکان بازی',36.951481, 50.613026]];
+                    var locations = [['مکان بازی',{{$location}}]];
 
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 17,

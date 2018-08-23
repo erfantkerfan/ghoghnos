@@ -30,11 +30,12 @@ class GameController extends Controller
         return redirect(route('g_'.$user->state));
     }
 
-    public function location($id , Request $request)
+    public function location(Request $request)
     {
         $user = Auth::user();
-        $user->location = $request->location;
+        $user->location = $request->position['coords']['latitude'].','.$request->position['coords']['longitude'];
         $user->save();
+        return 'OK';
     }
 
     public function stat()

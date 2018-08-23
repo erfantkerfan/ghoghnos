@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Location;
 use App\Player;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,9 @@ class GetController extends Controller
         if($user->state!=1){
             return redirect(route('start'));
         }
-        return view('games.1');
+        $location = Location::where('game_id','=','1')->get()->first()->location;
+        $google_api_key = config('app.google_api_key');
+        return view('games.1')->with(['location'=>$location,'google_api_key'=>$google_api_key]);
     }
     public function g_2()
     {
@@ -47,7 +50,9 @@ class GetController extends Controller
         $text = $game->q_2_1;
         $q = $game->q_2_2;
         $ma = $game->q_2_3;
-        return view('games.3')->with(['text'=>$text,'q'=>$q,'ma'=>$ma]);
+        $location = Location::where('game_id','=','3')->get()->first()->location;
+        $google_api_key = config('app.google_api_key');
+        return view('games.3')->with(['text'=>$text,'q'=>$q,'ma'=>$ma,'location'=>$location,'google_api_key'=>$google_api_key]);
     }
     public function g_4()
     {
@@ -97,7 +102,9 @@ class GetController extends Controller
         if($user->state!=5){
             return redirect(route('start'));
         }
-        return view('games.5');
+        $location = Location::where('game_id','=','5')->get()->first()->location;
+        $google_api_key = config('app.google_api_key');
+        return view('games.5')->with(['location'=>$location,'google_api_key'=>$google_api_key]);
     }
     public function g_6()
     {
@@ -133,7 +140,9 @@ class GetController extends Controller
         if($user->state!=9){
             return redirect(route('start'));
         }
-        return view('games.9');
+        $location = Location::where('game_id','=','9')->get()->first()->location;
+        $google_api_key = config('app.google_api_key');
+        return view('games.9')->with(['location'=>$location,'google_api_key'=>$google_api_key]);
     }
     public function g_10()
     {

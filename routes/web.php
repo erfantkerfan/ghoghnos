@@ -17,8 +17,6 @@ Route::get('/', 'HomeController@landing')->name('landing');
 Route::middleware(['Admin'])->group(function () {
     Route::get('/map', 'HomeController@map')->name('map');
     Route::get('/home', 'HomeController@index')->name('home');
-    // ToDo localaziong Locations Database
-    // ToDO get user location
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -27,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['CheckTime','auth'])->group(function () {
-    // Start Locations Routes
+    // Start & Locations Routes
     Route::post('/location', 'GameController@location')->name('location');
     Route::get('/start', 'GameController@start')->name('start');
 

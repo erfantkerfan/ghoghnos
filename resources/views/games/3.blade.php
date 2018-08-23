@@ -49,9 +49,9 @@
                     </div>
                 </form>
 
-                <script src="http://maps.google.com/maps/api/js?key=AIzaSyAafG74xopXE0y0qtpjbjjKA7Qhe3MYG_M" type="text/javascript"></script>
+                <script src="http://maps.google.com/maps/api/js?key={{$google_api_key}}" type="text/javascript"></script>
                 <script type="text/javascript">
-                    var locations = [['مکان بازی',36.950954, 50.612381]];
+                    var locations = [['مکان بازی',{{$location}}]];
 
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 17,
