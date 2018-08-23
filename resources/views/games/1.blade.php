@@ -49,7 +49,7 @@
                     </div>
                 </form>
 
-                <script src="http://maps.google.com/maps/api/js?key={{$google_api_key}}" type="text/javascript"></script>
+                <script src="https://maps.google.com/maps/api/js?key={{$google_api_key}}" type="text/javascript"></script>
                 <script type="text/javascript">
                     var locations = [['مکان بازی',{{$location}}]];
 

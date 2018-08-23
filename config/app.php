@@ -26,7 +26,7 @@ return [
     'day1e' => '1397-05-03 19:30:00',
     'day2s' => '1397-05-04 16:30:00',
     'day2e' => '1397-05-04 19:00:00',
-    'google_api_key' => 'AIzaSyAafG74xopXE0y0qtpjbjjKA7Qhe3MYG_M',
+    'google_api_key' => 'AIzaSyC32_XWO99K9lLusxXs0SeGFKWQOIpLpdQ',
     'timer' => false,// ToDO set it for game
 
     /*
